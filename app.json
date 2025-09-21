@@ -33,7 +33,8 @@
       "expo-image-picker",
       "expo-notifications",
       "expo-local-authentication",
-      "expo-secure-store"
+      "expo-secure-store",
+      "expo-asset"
     ]
   }
 }
