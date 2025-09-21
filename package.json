@@ -7,6 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "type-check": "tsc --noEmit"
@@ -18,6 +20,7 @@
     "expo": "~54.0.0",
     "expo-asset": "~12.0.9",
     "expo-file-system": "~19.0.14",
+    "expo-image-manipulator": "~13.0.5",
     "expo-image-picker": "~17.0.8",
     "expo-local-authentication": "~17.0.7",
     "expo-notifications": "~0.32.11",

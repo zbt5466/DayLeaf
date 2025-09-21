@@ -1,5 +1,6 @@
 import { Database } from './database';
 import { SettingsRepository } from './settingsRepository';
+import { PhotoService } from './photoService';
 import { PerformanceMonitor, measureAsync } from '../utils/performanceUtils';
 
 export interface InitializationResult {
@@ -28,7 +29,7 @@ export class InitializationService {
     
     try {
       // データベース初期化
-      const { result: dbResult } = await measureAsync(
+      await measureAsync(
         () => this.initializeDatabase(),
         'Database initialization'
       );
@@ -37,6 +38,12 @@ export class InitializationService {
       const { result: settings } = await measureAsync(
         () => this.loadSettings(),
         'Settings loading'
+      );
+      
+      // 写真ディレクトリの初期化
+      await measureAsync(
+        () => PhotoService.initializePhotosDirectory(),
+        'Photos directory initialization'
       );
       
       // 初期化完了
