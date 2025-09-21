@@ -1,6 +1,7 @@
 export { Database } from './database';
 export { EntryRepository } from './entryRepository';
 export { SettingsRepository } from './settingsRepository';
+export { InitializationService, type InitializationResult } from './initializationService';
 
 // Database service singleton for easy access
 import { Database } from './database';
